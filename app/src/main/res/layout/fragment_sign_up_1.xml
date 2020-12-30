@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".ui.onboarding.fragment.SignUp1Fragment">
+
+    <TextView
+        android:id="@+id/toast_message_1st_signup_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="137dp"
+        android:fontFamily="@font/raleway"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Please enter all details"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="169dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/get_started"
+        android:textColor="@color/orangePrimary"
+        android:textSize="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_text_phone"
+        android:layout_width="192dp"
+        android:layout_height="47dp"
+        android:autofillHints=""
+        android:backgroundTint="@color/orangePrimary"
+        android:digits="0 1 2 3 4 5 6 7 8 9"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="@string/enter_number"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_info_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_countries"
+        android:layout_width="110dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="59dp"
+        android:backgroundTint="@color/lightGrey"
+        android:dropDownWidth="95dp"
+        android:dropDownVerticalOffset="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_phone"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edit_text_phone"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/country_item" />
+
+    <TextView
+        android:id="@+id/textView_info_message"
+        android:layout_width="293dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="59dp"
+        android:fontFamily="@font/raleway"
+        android:text="@string/a_6_digit_otp_will_be_send_for_verification"
+        android:textColor="@color/orangeSecondary"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.512" />
+
+    <Button
+        android:id="@+id/textView_continue"
+        android:layout_width="141dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/curved_button1"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_phone"
+        app:layout_constraintTop_toBottomOf="@+id/textView_info_message"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="169dp"
+        android:src="@drawable/studgenie_logo"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

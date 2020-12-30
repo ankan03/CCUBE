@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "499873992104",
+    "firebase_url": "https://stud-genie.firebaseio.com",
+    "project_id": "stud-genie",
+    "storage_bucket": "stud-genie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499873992104:android:4444ef0413528dee96a19d",
+        "android_client_info": {
+          "package_name": "com.studgenie.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499873992104-4t01quf9911vovdiejl86psaod6spj7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmcROQNZH6g45LEPIlyc6orMgZvaFYFZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499873992104-4t01quf9911vovdiejl86psaod6spj7o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

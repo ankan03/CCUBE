@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".ui.onboarding.fragment.SignUp3Fragment">
+
+    <TextView
+        android:id="@+id/toast_message_3rd_signup_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/raleway"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Please enter all details"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/please_enter_your_details_textView"
+        android:layout_width="290dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingLeft="3dp"
+        android:text="@string/detail_text"
+        android:textColor="@color/orangePrimary"
+        android:textSize="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/enter_name_edit_text"
+        android:layout_width="290dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="57dp"
+        android:fontFamily="@font/raleway"
+        android:hint="@string/enter_name"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintTop_toBottomOf="@+id/please_enter_your_details_textView" />
+
+    <EditText
+        android:id="@+id/enter_email_edit_text"
+        android:layout_width="290dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/raleway"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintTop_toBottomOf="@+id/enter_name_edit_text" />
+
+    <EditText
+        android:id="@+id/enter_dob_edit_text"
+        android:layout_width="290dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/raleway"
+        android:hint="@string/enter_dob"
+
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintTop_toBottomOf="@+id/enter_email_edit_text" />
+
+    <EditText
+        android:id="@+id/interested_course_edit_Text"
+        android:layout_width="290dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/raleway"
+        android:hint="@string/course"
+
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/please_enter_your_details_textView"
+        app:layout_constraintTop_toBottomOf="@+id/enter_dob_edit_text" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="151dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="186dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="183dp"
+        android:background="@drawable/curved_button1"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/interested_course_edit_Text" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="108dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="155dp"
+        android:src="@drawable/studgenie_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_my_calendar"
+        app:layout_constraintBottom_toBottomOf="@+id/enter_dob_edit_text"
+        app:layout_constraintEnd_toEndOf="@+id/enter_dob_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/enter_dob_edit_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selected_flag"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+
+        />
+<!--    android:background="@drawable/img"-->
+    <TextView
+        android:id="@+id/selected_country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/selected_flag"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/selected_flag"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="fill_vertical"
+        android:text="+91"
+        android:textColor="@android:color/black"
+        android:textSize="14dp"
+        android:maxLines="1"
+        />
+</RelativeLayout>
