@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/studgenie_logo"
+        app:srcCompat="@drawable/ccube_1"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -38,8 +38,8 @@
         android:id="@+id/enter_otp_edit_text"
         android:layout_width="306dp"
         android:layout_height="65dp"
-        android:layout_marginTop="81dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="88dp"
         android:backgroundTint="@color/orangePrimary"
         android:digits="0 1 2 3 4 5 6 7 8 9"
         android:fontFamily="@font/poppins_medium"
@@ -48,8 +48,9 @@
         android:maxLength="6"
         android:textColor="@color/black"
         android:textSize="26dp"
+        app:flow_verticalAlign="@+id/enter_otp_title_text_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_title_textView" />
 
@@ -86,14 +87,16 @@
 
     <TextView
         android:id="@+id/enter_otp_title_text_view"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
+        android:layout_width="75dp"
+        android:layout_height="23dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="@font/raleway"
         android:text="@string/enter_otp"
         android:textColor="@color/black"
         android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/enter_otp_edit_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_title_textView" />
 
@@ -105,7 +108,7 @@
         android:fontFamily="@font/raleway"
         android:gravity="start"
         android:text="Resend OTP"
-        android:textColor="@color/gradient_orange"
+        android:textColor="#FC6B08"
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="@+id/did_not_receive_otp_text_view"
         app:layout_constraintStart_toEndOf="@+id/did_not_receive_otp_text_view"
@@ -131,13 +134,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:background="@color/transparent_blue"
+        android:background="#1F09CCC2"
         android:fontFamily="@font/raleway"
         android:gravity="center"
         android:padding="5dp"
         android:text="OTP resend to your mobile number"
         android:textAlignment="center"
-        android:textColor="@color/gradient_blue"
+        android:textColor="@color/black"
         android:textSize="12dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"

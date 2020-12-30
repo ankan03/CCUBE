@@ -38,7 +38,7 @@
 
     <TextView
         android:id="@+id/sign_up_title_textView_2"
-        android:layout_width="310dp"
+        android:layout_width="320dp"
         android:layout_height="25dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/account_created"
