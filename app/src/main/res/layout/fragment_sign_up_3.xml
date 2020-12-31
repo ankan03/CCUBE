@@ -86,18 +86,17 @@
         app:layout_constraintTop_toBottomOf="@+id/enter_email_edit_text" />
 
 
-
     <Spinner
         android:id="@+id/spinner_courses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="@id/please_enter_your_details_textView"
-        app:layout_constraintEnd_toEndOf="@id/please_enter_your_details_textView"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/enter_dob_edit_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/enter_dob_edit_text"
         app:layout_constraintTop_toBottomOf="@id/enter_dob_edit_text"
-        tools:ignore="MissingConstraints"
-       />
+
+        />
 
     <Button
         android:id="@+id/submit_button"
