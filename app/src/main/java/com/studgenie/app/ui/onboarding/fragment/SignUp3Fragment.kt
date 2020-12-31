@@ -219,6 +219,7 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                     response.body()?.get(0)?.number.toString(),
                                                     response.body()?.get(0)?.user_name.toString(),
                                                     response.body()?.get(0)?.email.toString(),
+                                                    response.body()?.get(0)?.dob.toString(),
                                                     storeUserId
                                                 )
                                                 Log.d("CoroutineUserData", "Successfully updated!")

@@ -70,6 +70,7 @@
         android:dropDownVerticalOffset="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_phone"
         app:layout_constraintEnd_toStartOf="@+id/edit_text_phone"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edit_text_phone"
         app:layout_constraintVertical_bias="0.0"

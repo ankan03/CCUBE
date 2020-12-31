@@ -216,6 +216,7 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                                                         response.body()?.data?.get(0)?.number.toString(),
                                                         response.body()?.data?.get(0)?.user_name.toString(),
                                                         response.body()?.data?.get(0)?.email.toString(),
+                                                        response.body()?.data?.get(0)?.dob.toString(),
                                                         storeUserId
                                                     )
                                                     Log.d("CoroutineUserData", "Successfully updated!")
@@ -291,10 +292,11 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                             Log.d("VERIFY","CharSequence = $s Start = $start Before = $before Count = $count")
                             if (start == 5 && before == 0 && count == 1) {
-                                verifyAndProceedButton.background = ContextCompat.getDrawable(requireContext(),R.drawable.button_shadow)
+//                                verifyAndProceedButton.background = ContextCompat.getDrawable(requireContext(),R.drawable.button_shadow)
+                                verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
                                 verifyAndProceedButton.isClickable = true
                             }else if (count == 6){
-                                verifyAndProceedButton.background = ContextCompat.getDrawable(requireContext(),R.drawable.button_shadow)
+                                verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
                                 verifyAndProceedButton.isClickable = true
                             }
                         }
