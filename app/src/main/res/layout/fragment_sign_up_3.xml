@@ -85,19 +85,19 @@
         app:layout_constraintStart_toStartOf="@+id/please_enter_your_details_textView"
         app:layout_constraintTop_toBottomOf="@+id/enter_email_edit_text" />
 
-    <EditText
-        android:id="@+id/interested_course_edit_Text"
-        android:layout_width="290dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/raleway"
-        android:hint="@string/course"
 
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/please_enter_your_details_textView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/please_enter_your_details_textView"
-        app:layout_constraintTop_toBottomOf="@+id/enter_dob_edit_text" />
+
+    <Spinner
+        android:id="@+id/spinner_courses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="@id/please_enter_your_details_textView"
+        app:layout_constraintEnd_toEndOf="@id/please_enter_your_details_textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@id/enter_dob_edit_text"
+        tools:ignore="MissingConstraints"
+       />
 
     <Button
         android:id="@+id/submit_button"
@@ -114,14 +114,14 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/interested_course_edit_Text" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_courses" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="108dp"
-        android:layout_height="91dp"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="63dp"
         android:layout_marginEnd="155dp"
         android:src="@drawable/ccube_1"
         app:layout_constraintEnd_toEndOf="parent"

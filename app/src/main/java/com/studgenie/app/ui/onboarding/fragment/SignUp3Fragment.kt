@@ -11,10 +11,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.studgenie.app.R
@@ -47,8 +44,8 @@ class SignUp3Fragment : Fragment() {
 
     lateinit var enterNameString: String
     lateinit var enterEmailString: String
-    lateinit var enterPasswordString: String
-    lateinit var enterConfirmPasswordString: String
+    lateinit var enterDobString: String
+//    lateinit var enterConfirmPasswordString: String
     lateinit var authToken: String
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -62,15 +59,15 @@ class SignUp3Fragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_sign_up_3, container, false)
         val submitButton = rootView.findViewById<Button>(R.id.submit_button)
         //val skipButton = rootView.findViewById<Button>(R.id.skip_button)
-       val toastMessage = rootView.findViewById<TextView>(R.id.toast_message_3rd_signup_fragment)
+        val toastMessage = rootView.findViewById<TextView>(R.id.toast_message_3rd_signup_fragment)
         toastMessage.visibility = View.INVISIBLE
         val calendar=rootView.findViewById<ImageView>(R.id.calendar)
         val DOB=rootView.findViewById<EditText>(R.id.enter_dob_edit_text)
 
         enterNameString = rootView.enter_name_edit_text.text.toString().trim()
         enterEmailString = rootView.enter_email_edit_text.text.toString().trim()
-        enterPasswordString = rootView.enter_dob_edit_text.text.toString().trim()
-        enterConfirmPasswordString = rootView.interested_course_edit_Text.text.toString().trim()
+        enterDobString = rootView.enter_dob_edit_text.text.toString().trim()
+//        enterConfirmPasswordString = rootView.interested_course_edit_Text.text.toString().trim()
 
 //        //skipButton.setOnClickListener {
 //            val i = Intent(activity, HomeActivity::class.java)
@@ -79,6 +76,17 @@ class SignUp3Fragment : Fragment() {
 //
 //            activity?.finish()
 //        }
+
+//        spinner for interested courses
+        val spinner: Spinner = rootView.spinner_courses
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.interested_courses,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
 val dateFormat=SimpleDateFormat("dd MMMM YYYY")
         calendar.setOnClickListener {
             val getDate: Calendar = Calendar.getInstance()
@@ -128,16 +136,12 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
         submitButton.setOnClickListener {
             enterNameString = rootView.enter_name_edit_text.text.toString().trim()
             enterEmailString = rootView.enter_email_edit_text.text.toString().trim()
-            enterPasswordString = rootView.enter_dob_edit_text.text.toString().trim()
-            enterConfirmPasswordString = rootView.interested_course_edit_Text.text.toString().trim()
+            enterDobString = rootView.enter_dob_edit_text.text.toString().trim()
+//            enterConfirmPasswordString = rootView.interested_course_edit_Text.text.toString().trim()
 
-            if (!enterNameString.isEmpty() && !enterEmailString.isEmpty() && !enterPasswordString.isEmpty()) {
+            if (!enterNameString.isEmpty() && !enterEmailString.isEmpty() ) {
 
                 if (enterEmailString.isValidEmail()) {
-                    if (enterPasswordString.length >= 8) {
-                        if (enterPasswordString.equals(enterConfirmPasswordString)) {
-                            toastMessage.visibility = View.INVISIBLE
-
 
                             val retrofit = Retrofit.Builder()
 //                .baseUrl("http://192.168.43.217:3000")
@@ -151,14 +155,17 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                 val sendDetails = SendUserDetails(
                                     enterNameString,
                                     enterEmailString,
-                                    enterPasswordString,
+                                    enterDobString,
                                     authToken
                                 )
 //                        val sendDetails = SendUserDetails("aaaaaa","aa@bb","12345","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiI3OTkyOTgyMDM4IiwiaWF0IjoxNjAzODA5MTI2fQ.XyVd0uiTLCDFRHu3dwu4SsyUEes35Vzxb-QjMiROYV0")
                                 createDetailsApi.userDetails(sendDetails).enqueue(object :
                                     Callback<List<UserDetailsApiResponse>> {
-                                    override fun onResponse(call: Call<List<UserDetailsApiResponse>>, response: Response<List<UserDetailsApiResponse>>) {
-                                        if (response.isSuccessful){
+                                    override fun onResponse(
+                                        call: Call<List<UserDetailsApiResponse>>,
+                                        response: Response<List<UserDetailsApiResponse>>
+                                    ) {
+                                        if (response.isSuccessful) {
                                             Log.d(
                                                 "RetrofitUserDetails",
                                                 "OnResponse: ${response.body()?.get(0)?.number} \n"
@@ -200,7 +207,10 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                             )
 //                                                    Toast.makeText(requireContext(),user[0].id.toString() + user[0].number.toString() + user[0].firstName.toString() + user[0].lastName.toString() + user[0].dob.toString() + user[0].pictureUrl.toString() + user[0].accountStatus.toString() + user[0].maxDevices.toString() + user[0].userName.toString() + user[0].studentId.toString() + user[0].instituteId.toString() + user[0].email.toString() , Toast.LENGTH_SHORT).show()
                                                         } else {
-                                                            Log.d("CoroutineUserData", "User Data Not added")
+                                                            Log.d(
+                                                                "CoroutineUserData",
+                                                                "User Data Not added"
+                                                            )
                                                         }
                                                     })
                                                 activity?.finish()
@@ -215,7 +225,10 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
 
                                                 val i = Intent(activity, HomeActivity::class.java)
                                                 startActivity(i)
-                                                (activity as Activity?)!!.overridePendingTransition(0,0)
+                                                (activity as Activity?)!!.overridePendingTransition(
+                                                    0,
+                                                    0
+                                                )
                                                 userViewModel.readAllDataModel?.observe(
                                                     viewLifecycleOwner,
                                                     Observer { user ->
@@ -227,10 +240,10 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                     })
                                                 activity?.finish()
                                             }
-                                        }else{
-                                           toastMessage.visibility = View.VISIBLE
+                                        } else {
+                                            toastMessage.visibility = View.VISIBLE
                                             toastMessage.text = "Server Error"
-                                            toastMessage.setBackgroundResource(R.color.transparent_red)
+                                            toastMessage.setBackgroundResource(R.color.toast_background)
                                         }
                                     }
 
@@ -245,31 +258,34 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                         )
                                         toastMessage.visibility = View.VISIBLE
                                         toastMessage.text = "Try after some time "
-                                        toastMessage.setBackgroundResource(R.color.transparent_red)
+                                        toastMessage.setBackgroundResource(R.color.toast_background)
                                     }
                                 })
-                            } else {
+                            }
+                            else {
                                 Log.d("CoroutineToken", "Auth token is empty")
                             }
-                        } else {
-                            toastMessage.visibility = View.VISIBLE
-                            toastMessage.text = "Password did not match"
-                            toastMessage.setBackgroundResource(R.color.transparent_red)
-                        }
-                    } else {
-                        toastMessage.visibility = View.VISIBLE
-                        toastMessage.text = "Minimum password length should be 8"
-                        toastMessage.setBackgroundResource(R.color.transparent_red)
-                    }
+
+//                        else {
+//                            toastMessage.visibility = View.VISIBLE
+//                            toastMessage.text = "Password did not match"
+//                            toastMessage.setBackgroundResource(R.color.toast_background)
+//                        }
+
+//                    } else {
+//                        toastMessage.visibility = View.VISIBLE
+//                        toastMessage.text = "Minimum password length should be 8"
+//                        toastMessage.setBackgroundResource(R.color.toast_background)
+//                    }
                 } else {
                     toastMessage.visibility = View.VISIBLE
                     toastMessage.text = "Enter a valid Email"
-                    toastMessage.setBackgroundResource(R.color.transparent_red)
+                    toastMessage.setBackgroundResource(R.color.toast_background)
                 }
             } else {
                 toastMessage.visibility = View.VISIBLE
                 toastMessage.text = "Please enter all details"
-                toastMessage.setBackgroundResource(R.color.transparent_red)
+                toastMessage.setBackgroundResource(R.color.toast_background)
             }
         }
         return rootView

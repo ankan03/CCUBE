@@ -106,7 +106,7 @@ class SignUp1Fragment : Fragment() {
                                 if (storePhoneNo.matches("".toRegex())) {
                                     toastMessage.visibility = View.VISIBLE
                                     toastMessage.text = "Enter your number first"
-                                    toastMessage.setBackgroundResource(R.color.transparent_red)
+                                    toastMessage.setBackgroundResource(R.color.toast_background)
                                 } else {
                                     if (InternetConnectivity.isConnected(requireContext()) && InternetConnectivity.isConnectedFast(requireContext())) {
                                         if (storePhoneNo.length == phoneNumberLength) {
@@ -130,38 +130,38 @@ class SignUp1Fragment : Fragment() {
                                             toastMessage.visibility = View.VISIBLE
                                             toastMessage.text =
                                                 "Mobile number should be of 10 digits"
-                                            toastMessage.setBackgroundResource(R.color.transparent_red)
+                                            toastMessage.setBackgroundResource(R.color.toast_background)
                                         }
                                     } else {
                                         toastMessage.visibility = View.VISIBLE
                                         toastMessage.text = "Check Your Internet Connection"
-                                        toastMessage.setBackgroundResource(R.color.transparent_red)
+                                        toastMessage.setBackgroundResource(R.color.toast_background)
                                     }
                                 }
                             } else {
                                 toastMessage.visibility = View.VISIBLE
                                 toastMessage.text = "Check Your Internet Connection"
-                                toastMessage.setBackgroundResource(R.color.transparent_red)
+                                toastMessage.setBackgroundResource(R.color.toast_background)
                             }
                         })
                     }else{
                         Log.d("RetrofitCountryService", "NOT SUCCESSFUL")
                         toastMessage.visibility = View.VISIBLE
                         toastMessage.text = "Server Error"
-                        toastMessage.setBackgroundResource(R.color.transparent_red)
+                        toastMessage.setBackgroundResource(R.color.toast_background)
                     }
                 }
                 override fun onFailure(call: Call<List<CountryItem>>, t: Throwable) {
                     Log.d("RetrofitCountryService", "OnFailure")
                     toastMessage.visibility = View.VISIBLE
                     toastMessage.text = "Try after some time "
-                    toastMessage.setBackgroundResource(R.color.transparent_red)
+                    toastMessage.setBackgroundResource(R.color.toast_background)
                 }
             })
         } else {
             toastMessage.visibility = View.VISIBLE
             toastMessage.text = "Check Your Internet Connection"
-            toastMessage.setBackgroundResource(R.color.transparent_red)
+            toastMessage.setBackgroundResource(R.color.toast_background)
         }
 //        exploreTextView.setOnClickListener {
 //            val status = UserStatusModel("User Entered")

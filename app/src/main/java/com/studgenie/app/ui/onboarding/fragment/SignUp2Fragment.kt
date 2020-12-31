@@ -107,7 +107,7 @@ class SignUp2Fragment : Fragment(), VerificationListener {
         }else{
             toastMessage.visibility = View.VISIBLE
             toastMessage.text = "Check Your Internet Connection"
-            toastMessage.setBackgroundResource(R.color.transparent_red)
+            toastMessage.setBackgroundResource(R.color.toast_background)
         }
         authTokenViewModel.readAllData?.observe(viewLifecycleOwner, Observer{ auth->
             if (auth.isEmpty()){
@@ -140,7 +140,7 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                 if (responseCode == SendOTPResponseCode.DIRECT_VERIFICATION_SUCCESSFUL_FOR_NUMBER || responseCode == SendOTPResponseCode.OTP_VERIFIED) {
                     //Verified Successfully !
                     toastMessage.text = "Verified Successfully !"
-                    toastMessage.setBackgroundResource(R.color.transparent_blue)
+                    toastMessage.setBackgroundResource(R.color.toast_background)
                     timer.cancel();
                     timer.onFinish()
 
@@ -228,14 +228,14 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                                             }else{
                                                 toastMessage.visibility = View.VISIBLE
                                                 toastMessage.text = "Server Error"
-                                                toastMessage.setBackgroundResource(R.color.transparent_red)
+                                                toastMessage.setBackgroundResource(R.color.toast_background)
                                             }
                                         }
                                         override fun onFailure(call: Call<SigninApiResponse>, t: Throwable) {
                                             Log.d("RetrofitSignin", "onFailure")
                                             toastMessage.visibility = View.VISIBLE
                                             toastMessage.text = "Try after some time "
-                                            toastMessage.setBackgroundResource(R.color.transparent_red)
+                                            toastMessage.setBackgroundResource(R.color.toast_background)
                                         }
                                     })
                                 } else {
@@ -268,14 +268,14 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                             }else{
                                 toastMessage.visibility = View.VISIBLE
                                 toastMessage.text = "Server Error"
-                                toastMessage.setBackgroundResource(R.color.transparent_red)
+                                toastMessage.setBackgroundResource(R.color.toast_background)
                             }
                         }
                         override fun onFailure(call: Call<SignUpApiResponse>, t: Throwable) {
                             Log.d("RetrofitSignup", "OnFailure")
                             toastMessage.visibility = View.VISIBLE
                             toastMessage.text = "Try after some time "
-                            toastMessage.setBackgroundResource(R.color.transparent_red)
+                            toastMessage.setBackgroundResource(R.color.toast_background)
                         }
                     })
                 } else if (responseCode == SendOTPResponseCode.READ_OTP_SUCCESS) {
@@ -307,34 +307,34 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                     if (char in '0'..'9'){
                         toastMessage.visibility = View.VISIBLE
                         toastMessage.text = "OTP sent successfully"
-                        toastMessage.setBackgroundResource(R.color.transparent_blue)
+                        toastMessage.setBackgroundResource(R.color.toast_background)
                         enterOtpEditText.text?.clear()
                         verifyAndProceedButton.isClickable = false
-                        verifyAndProceedButton.setBackgroundResource(R.color.transparent_red)
+                        verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
                     }
                     if (message == "otp_sent_successfully"){
                         toastMessage.visibility = View.VISIBLE
                         enterOtpEditText.text?.clear();
                         toastMessage.text = "OTP resent to your mobile number"
-                        toastMessage.setBackgroundResource(R.color.transparent_blue)
+                        toastMessage.setBackgroundResource(R.color.toast_background)
                         verifyAndProceedButton.isClickable = false
-                        verifyAndProceedButton.setBackgroundResource(R.color.transparent_red)
+                        verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
                     }
                 }else {
                     if (message == "otp_not_verified"){
                         toastMessage.visibility = View.VISIBLE
                         toastMessage.text = "Invalid or Incorrect OTP"
-                        toastMessage.setBackgroundResource(R.color.transparent_red)
+                        toastMessage.setBackgroundResource(R.color.toast_background)
                     }else if (message == "no_request_found" || message == "Number is invalid type" || message == "Invalid_mobile"||message=="Please Enter valid mobile no"){
                         toastMessage.visibility = View.VISIBLE
                         toastMessage.text = "Mobile number not found. Enter a valid number"
-                        toastMessage.setBackgroundResource(R.color.transparent_red)
+                        toastMessage.setBackgroundResource(R.color.toast_background)
                         timer.cancel()
                         timer.onFinish()
                     }else if (message == "max_limit_reached_for_this_otp_verification"){
                         toastMessage.visibility = View.VISIBLE
                         toastMessage.text = "Maximum limit reached for this OTP verification"
-                        toastMessage.setBackgroundResource(R.color.transparent_red)
+                        toastMessage.setBackgroundResource(R.color.toast_background)
                         timer.cancel()
                         timer.onFinish()
                     }
@@ -349,7 +349,7 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                     else if(message == "NO INTERNET CONNECTION"){
                         toastMessage.visibility = View.VISIBLE
                         toastMessage.text = "NO INTERNET CONNECTION"
-                        toastMessage.setBackgroundResource(R.color.transparent_red)
+                        toastMessage.setBackgroundResource(R.color.toast_background)
                         timer.cancel()
                         timer.onFinish()
                     }else {
@@ -378,11 +378,11 @@ class SignUp2Fragment : Fragment(), VerificationListener {
         }else{
             toastMessage.visibility = View.VISIBLE
             toastMessage.text = "Check Your Internet Connection"
-            toastMessage.setBackgroundResource(R.color.transparent_red)
+            toastMessage.setBackgroundResource(R.color.toast_background)
             timer.cancel()
             timer.onFinish()
             verifyAndProceedButton.isClickable = false
-            verifyAndProceedButton.setBackgroundResource(R.color.transparent_red)
+            verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
         }
     }
 
@@ -399,18 +399,18 @@ class SignUp2Fragment : Fragment(), VerificationListener {
         }else{
             toastMessage.visibility = View.VISIBLE
             toastMessage.text = "Check Your Internet Connection"
-            toastMessage.setBackgroundResource(R.color.transparent_red)
+            toastMessage.setBackgroundResource(R.color.toast_background)
             timer.cancel()
             timer.onFinish()
             verifyAndProceedButton.isClickable = false
-            verifyAndProceedButton.setBackgroundResource(R.color.transparent_red)
+            verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
         }
     }
 
     private fun startTimer() {
         if (InternetConnectivity.isConnected(requireContext()) && InternetConnectivity.isConnectedFast(requireContext())) {
             reSendOtpButton.isClickable = false
-            reSendOtpButton.setTextColor(resources.getColor(R.color.transparent_red))
+            reSendOtpButton.setTextColor(resources.getColor(R.color.otp_Resend_color))
             timer = object : CountDownTimer(30000, 1000) {
                 var secondsLeft = 0
                 override fun onTick(ms: Long) {
@@ -427,19 +427,19 @@ class SignUp2Fragment : Fragment(), VerificationListener {
                 override fun onFinish() {
                     otpTimer.text = "00.00"
                     reSendOtpButton.isClickable = true
-                    reSendOtpButton.setTextColor(resources.getColor(R.color.orangePrimary))
+                    reSendOtpButton.setTextColor(resources.getColor(R.color.otp_Resend_color))
                     verifyAndProceedButton.isClickable = false
-                    verifyAndProceedButton.setBackgroundResource(R.color.transparent_red)
+                    verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
                 }
             }.start()
         }else{
             toastMessage.visibility = View.VISIBLE
             toastMessage.text = "Check Your Internet Connection"
-            toastMessage.setBackgroundResource(R.color.transparent_red)
+            toastMessage.setBackgroundResource(R.color.toast_background)
             timer.cancel()
             timer.onFinish()
             verifyAndProceedButton.isClickable = false
-            verifyAndProceedButton.setBackgroundResource(R.color.transparent_red)
+            verifyAndProceedButton.setBackgroundResource(R.color.text_gradient_blue)
         }
     }
     override fun onDestroy() {

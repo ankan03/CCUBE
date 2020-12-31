@@ -23,4 +23,8 @@
     <color name="transparent_red">#1FD9391D</color>
     <color name="transparent_blue">#1F2190DA</color>
 
+    <color name="toast_background">#1F09CCC2</color>
+
+    <color name="otp_Resend_color">#FC6B08</color>
+
 </resources>

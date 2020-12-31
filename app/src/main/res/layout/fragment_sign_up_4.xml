@@ -11,13 +11,13 @@
         android:id="@+id/ccube_imageView"
         android:layout_width="138dp"
         android:layout_height="117dp"
-        android:layout_marginTop="127dp"
+        android:layout_marginTop="98dp"
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/studgenie_logo"
+        app:srcCompat="@drawable/ccube_1"
         tools:ignore="ContentDescription" />
 
     <TextView
