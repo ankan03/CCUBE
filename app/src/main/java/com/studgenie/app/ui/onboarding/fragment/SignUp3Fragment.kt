@@ -189,12 +189,18 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                 userViewModel.addUserData(mUserData)
                                                 Log.d("CoroutineUserData", "Successfully added!")
 
-                                                val i = Intent(activity, HomeActivity::class.java)
-                                                startActivity(i)
-                                                (activity as Activity?)!!.overridePendingTransition(
-                                                    0,
-                                                    0
-                                                )
+//                                                val i = Intent(activity, HomeActivity::class.java)
+//                                                startActivity(i)
+//                                                (activity as Activity?)!!.overridePendingTransition(
+//                                                    0,
+//                                                    0
+//                                                )
+                                                val signUp4Fragment = SignUp4Fragment()
+//                                                val args = Bundle()
+//                                                args.putString("phNo", phoneNumberEditText.text.toString())
+//                                                signUp2Fragment.arguments = args
+                                                fragmentManager!!.beginTransaction()
+                                                    .replace(R.id.signup_fragment_container, signUp4Fragment).commit()
 
 
                                                 userViewModel.readAllDataModel?.observe(
@@ -223,13 +229,21 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                     storeUserId
                                                 )
                                                 Log.d("CoroutineUserData", "Successfully updated!")
+//
+//                                                val i = Intent(activity, HomeActivity::class.java)
+//                                                startActivity(i)
+//                                                (activity as Activity?)!!.overridePendingTransition(
+//                                                    0,
+//                                                    0
+//                                                )
+                                                val signUp4Fragment = SignUp4Fragment()
+//                                                val args = Bundle()
+//                                                args.putString("phNo", phoneNumberEditText.text.toString())
+//                                                signUp2Fragment.arguments = args
+                                                fragmentManager!!.beginTransaction()
+                                                    .replace(R.id.signup_fragment_container, signUp4Fragment).commit()
 
-                                                val i = Intent(activity, HomeActivity::class.java)
-                                                startActivity(i)
-                                                (activity as Activity?)!!.overridePendingTransition(
-                                                    0,
-                                                    0
-                                                )
+
                                                 userViewModel.readAllDataModel?.observe(
                                                     viewLifecycleOwner,
                                                     Observer { user ->
