@@ -34,6 +34,7 @@ import kotlinx.android.synthetic.main.fragment_sign_up_3.view.*
 import java.text.SimpleDateFormat
 
 
+@Suppress("DEPRECATION")
 class SignUp3Fragment : Fragment() {
     private lateinit var authTokenViewModel: AuthTokenViewModel
     private lateinit var userViewModel: UserViewModel
@@ -79,15 +80,11 @@ class SignUp3Fragment : Fragment() {
 
 //        spinner for interested courses
         val spinner: Spinner = rootView.spinner_courses
-        ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.interested_courses,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
+        ArrayAdapter.createFromResource(requireContext(),R.array.interested_courses, android.R.layout.simple_spinner_item).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }
-val dateFormat=SimpleDateFormat("dd MMMM YYYY")
+        val dateFormat=SimpleDateFormat("dd MMMM YYYY")
         calendar.setOnClickListener {
             val getDate: Calendar = Calendar.getInstance()
             val datePicker= activity?.let { it1 -> DatePickerDialog(it1,android.R.style.Theme_Holo_Light_Dialog_MinWidth,DatePickerDialog.OnDateSetListener{ datePicker, i, i2, i3 ->
@@ -189,12 +186,18 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                 userViewModel.addUserData(mUserData)
                                                 Log.d("CoroutineUserData", "Successfully added!")
 
-                                                val i = Intent(activity, HomeActivity::class.java)
-                                                startActivity(i)
-                                                (activity as Activity?)!!.overridePendingTransition(
-                                                    0,
-                                                    0
-                                                )
+//                                                val i = Intent(activity, HomeActivity::class.java)
+//                                                startActivity(i)
+//                                                (activity as Activity?)!!.overridePendingTransition(
+//                                                    0,
+//                                                    0
+//                                                )
+                                                val signUp4Fragment = SignUp4Fragment()
+//                                                val args = Bundle()
+//                                                args.putString("phNo", phoneNumberEditText.text.toString())
+//                                                signUp2Fragment.arguments = args
+                                                fragmentManager!!.beginTransaction()
+                                                    .replace(R.id.signup_fragment_container, signUp4Fragment).commit()
 
 
                                                 userViewModel.readAllDataModel?.observe(
@@ -213,22 +216,31 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                             )
                                                         }
                                                     })
-                                                activity?.finish()
+//                                                activity?.finish()
                                             } else {
                                                 userViewModel.updateUserData(
                                                     response.body()?.get(0)?.number.toString(),
                                                     response.body()?.get(0)?.user_name.toString(),
                                                     response.body()?.get(0)?.email.toString(),
+                                                    response.body()?.get(0)?.dob.toString(),
                                                     storeUserId
                                                 )
                                                 Log.d("CoroutineUserData", "Successfully updated!")
+//
+//                                                val i = Intent(activity, HomeActivity::class.java)
+//                                                startActivity(i)
+//                                                (activity as Activity?)!!.overridePendingTransition(
+//                                                    0,
+//                                                    0
+//                                                )
+                                                val signUp4Fragment = SignUp4Fragment()
+//                                                val args = Bundle()
+//                                                args.putString("phNo", phoneNumberEditText.text.toString())
+//                                                signUp2Fragment.arguments = args
+                                                fragmentManager!!.beginTransaction()
+                                                    .replace(R.id.signup_fragment_container, signUp4Fragment).commit()
 
-                                                val i = Intent(activity, HomeActivity::class.java)
-                                                startActivity(i)
-                                                (activity as Activity?)!!.overridePendingTransition(
-                                                    0,
-                                                    0
-                                                )
+
                                                 userViewModel.readAllDataModel?.observe(
                                                     viewLifecycleOwner,
                                                     Observer { user ->
@@ -238,7 +250,7 @@ val dateFormat=SimpleDateFormat("dd MMMM YYYY")
                                                         )
 //                                                Toast.makeText(requireContext(),user[0].id.toString() + user[0].number.toString() + user[0].firstName.toString() + user[0].lastName.toString() + user[0].dob.toString() + user[0].pictureUrl.toString() + user[0].accountStatus.toString() + user[0].maxDevices.toString() + user[0].userName.toString() + user[0].studentId.toString() + user[0].instituteId.toString() + user[0].email.toString() , Toast.LENGTH_SHORT).show()
                                                     })
-                                                activity?.finish()
+//                                                activity?.finish()
                                             }
                                         } else {
                                             toastMessage.visibility = View.VISIBLE

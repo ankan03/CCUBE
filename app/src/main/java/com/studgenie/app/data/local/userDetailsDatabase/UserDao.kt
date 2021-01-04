@@ -8,8 +8,8 @@ interface UserDao {
     @Insert
     suspend fun addUserData(userDataModel: UserDataModel)
 
-    @Query("UPDATE UserDataModel SET number=:number, userName = :username,email = :email WHERE id=:pid")
-    suspend fun updateUserData(number: String, username: String, email: String, pid: Int)
+    @Query("UPDATE UserDataModel SET number=:number, userName = :username,email = :email, dob = :dob  WHERE id=:pid")
+    suspend fun updateUserData(number: String, username: String, email: String, dob: String ,pid: Int)
 
     @Query("SELECT * FROM UserDataModel ORDER BY id DESC")
     fun getUserData(): LiveData<List<UserDataModel>>

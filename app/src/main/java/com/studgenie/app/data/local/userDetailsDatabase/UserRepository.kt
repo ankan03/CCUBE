@@ -10,8 +10,8 @@ class UserRepository(private val userDao: UserDao) {
         userDao.addUserData(userDataModel)
     }
 
-    suspend fun updateUserData(number: String, username: String, email: String, pid: Int) {
-        userDao.updateUserData(number, username, email, pid)
+    suspend fun updateUserData(number: String, username: String, email: String,dob :String, pid: Int) {
+        userDao.updateUserData(number, username, email, dob, pid)
     }
 
     suspend fun deleteUserData() {
