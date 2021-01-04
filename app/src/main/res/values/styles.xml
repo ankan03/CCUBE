@@ -11,5 +11,8 @@
 <!--        <item name="android:statusBarColor">@color/white</item>-->
         <item name="android:windowFullscreen">true</item>
     </style>
+    <style name="DatePickerStyle" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/gradient_blue</item>
+    </style>
 
 </resources>

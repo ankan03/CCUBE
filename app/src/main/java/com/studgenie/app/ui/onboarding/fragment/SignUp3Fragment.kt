@@ -1,8 +1,7 @@
 package com.studgenie.app.ui.onboarding.fragment
 
-import android.app.Activity
 import android.app.DatePickerDialog
-import android.content.Intent
+import android.app.DatePickerDialog.OnDateSetListener
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
@@ -14,24 +13,24 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.studgenie.app.R
-import com.studgenie.app.data.model.SendUserDetails
-import com.studgenie.app.data.remote.response.UserDetailsApiResponse
 import com.studgenie.app.data.local.tokenDatabase.AuthTokenViewModel
-import com.studgenie.app.ui.main.activity.HomeActivity
+import com.studgenie.app.data.local.userDetailsDatabase.UserDataModel
+import com.studgenie.app.data.local.userDetailsDatabase.UserViewModel
+import com.studgenie.app.data.model.SendUserDetails
+import com.studgenie.app.data.remote.request.CreateDetailsApi
+import com.studgenie.app.data.remote.response.UserDetailsApiResponse
+import com.studgenie.app.util.Config
+import kotlinx.android.synthetic.main.fragment_sign_up_3.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.studgenie.app.data.local.userDetailsDatabase.UserDataModel
-import com.studgenie.app.data.local.userDetailsDatabase.UserViewModel
-import com.studgenie.app.data.remote.request.CreateDetailsApi
-import com.studgenie.app.util.Config
-import kotlinx.android.synthetic.main.fragment_sign_up_3.view.*
 import java.text.SimpleDateFormat
+import java.util.*
 
 
 @Suppress("DEPRECATION")
@@ -46,6 +45,7 @@ class SignUp3Fragment : Fragment() {
     lateinit var enterNameString: String
     lateinit var enterEmailString: String
     lateinit var enterDobString: String
+    lateinit var DOB:EditText
 //    lateinit var enterConfirmPasswordString: String
     lateinit var authToken: String
 
@@ -63,7 +63,7 @@ class SignUp3Fragment : Fragment() {
         val toastMessage = rootView.findViewById<TextView>(R.id.toast_message_3rd_signup_fragment)
         toastMessage.visibility = View.INVISIBLE
         val calendar=rootView.findViewById<ImageView>(R.id.calendar)
-        val DOB=rootView.findViewById<EditText>(R.id.enter_dob_edit_text)
+        DOB=rootView.findViewById<EditText>(R.id.enter_dob_edit_text)
         DOB.isFocusable=false
         DOB.isCursorVisible=false
         enterNameString = rootView.enter_name_edit_text.text.toString().trim()
@@ -81,31 +81,32 @@ class SignUp3Fragment : Fragment() {
 
 //        spinner for interested courses
         val spinner: Spinner = rootView.spinner_courses
-        ArrayAdapter.createFromResource(requireContext(),R.array.interested_courses, android.R.layout.simple_spinner_item).also { adapter ->
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.interested_courses,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }
         val dateFormat=SimpleDateFormat("dd MMMM YYYY")
-        calendar.setOnClickListener {
-            val getDate: Calendar = Calendar.getInstance()
-            val datePicker= activity?.let { it1 -> DatePickerDialog(it1,android.R.style.Theme_Holo_Light_Dialog_MinWidth,DatePickerDialog.OnDateSetListener{ datePicker, i, i2, i3 ->
-                val SelectDate=Calendar.getInstance()
-                SelectDate.set(Calendar.YEAR,i)
-                SelectDate.set(Calendar.MONTH,i2)
-                SelectDate.set(Calendar.DAY_OF_MONTH,i3)
-                val date=dateFormat.format(SelectDate.time)
-               DOB.setText(date)
 
-
-            },getDate.get(Calendar.YEAR),getDate.get(Calendar.MONTH),getDate.get(Calendar.DAY_OF_MONTH)) }
-            if (datePicker != null) {
-                datePicker.show()
+        var myCalendar:Calendar = Calendar.getInstance();
+        val date = OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                myCalendar.set(Calendar.YEAR, year)
+                myCalendar.set(Calendar.MONTH, monthOfYear)
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                updateDate(myCalendar)
             }
+        calendar.setOnClickListener {
+            DatePickerDialog(
+                requireContext(), R.style.DatePickerStyle,date, myCalendar[Calendar.YEAR],
+                myCalendar[Calendar.MONTH],
+                myCalendar[Calendar.DAY_OF_MONTH]
+            ).show()
         }
 
-
-
-        authTokenViewModel.readAllData?.observe(viewLifecycleOwner, Observer { auth ->
+       authTokenViewModel.readAllData?.observe(viewLifecycleOwner, Observer { auth ->
             if (auth.isEmpty()) {
                 isTokenEmpty = 1
                 Log.d("CoroutineToken", "List is empty")
@@ -127,8 +128,6 @@ class SignUp3Fragment : Fragment() {
                 Log.d("CoroutineUserData", user[0].id.toString() + user[0].number)
             }
         })
-
-
 
 
         submitButton.setOnClickListener {
@@ -198,7 +197,10 @@ class SignUp3Fragment : Fragment() {
 //                                                args.putString("phNo", phoneNumberEditText.text.toString())
 //                                                signUp2Fragment.arguments = args
                                                 fragmentManager!!.beginTransaction()
-                                                    .replace(R.id.signup_fragment_container, signUp4Fragment).commit()
+                                                    .replace(
+                                                        R.id.signup_fragment_container,
+                                                        signUp4Fragment
+                                                    ).commit()
 
 
                                                 userViewModel.readAllDataModel?.observe(
@@ -239,7 +241,10 @@ class SignUp3Fragment : Fragment() {
 //                                                args.putString("phNo", phoneNumberEditText.text.toString())
 //                                                signUp2Fragment.arguments = args
                                                 fragmentManager!!.beginTransaction()
-                                                    .replace(R.id.signup_fragment_container, signUp4Fragment).commit()
+                                                    .replace(
+                                                        R.id.signup_fragment_container,
+                                                        signUp4Fragment
+                                                    ).commit()
 
 
                                                 userViewModel.readAllDataModel?.observe(
@@ -302,6 +307,15 @@ class SignUp3Fragment : Fragment() {
             }
         }
         return rootView
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun updateDate(myCalendar: Calendar) {
+        val myFormat = "dd MMMM YYYY" //In which you need put here
+
+        val sdf: SimpleDateFormat = SimpleDateFormat(myFormat, Locale.US)
+
+        DOB.setText(sdf.format(myCalendar.getTime()))
     }
 
     fun CharSequence?.isValidEmail() =
