@@ -80,7 +80,6 @@
         android:id="@+id/textView_info_message"
         android:layout_width="293dp"
         android:layout_height="24dp"
-        android:layout_marginStart="59dp"
         android:fontFamily="@font/raleway"
         android:text="@string/a_6_digit_otp_will_be_send_for_verification"
         android:textColor="@color/orangeSecondary"
@@ -88,7 +87,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/spinner_countries"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.512" />
 
