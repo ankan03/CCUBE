@@ -2,11 +2,14 @@ package com.studgenie.app.ui.onboarding.fragment
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.studgenie.app.R
@@ -39,6 +42,7 @@ class SignUp1Fragment : Fragment() {
     lateinit var countryCode: String
     lateinit var toastMessage: TextView
     lateinit var exploreTextView: TextView
+    lateinit var verificationIcon:ImageView
     var phoneNumberLength: Int = 0
 
     override fun onCreateView(
@@ -56,6 +60,8 @@ class SignUp1Fragment : Fragment() {
         phoneNumberEditText = rootView.findViewById(R.id.edit_text_phone)
         continueButton = rootView.findViewById(R.id.textView_continue)
         toastMessage = rootView.findViewById(R.id.toast_message_1st_signup_fragment)
+        verificationIcon=rootView.findViewById(R.id.verification_image)
+        verificationIcon.visibility=View.INVISIBLE
       //  exploreTextView = rootView.findViewById<TextView>(R.id.textView_explore)
 
         val spinner = rootView.findViewById<Spinner>(R.id.spinner_countries)
@@ -100,6 +106,37 @@ class SignUp1Fragment : Fragment() {
                         Log.d("RetrofitCountryService", "OnResponse: ${response.body()!![0].country_code}")
 
 
+                        phoneNumberEditText.addTextChangedListener(object :TextWatcher{
+                            override fun beforeTextChanged(
+                                p0: CharSequence?,
+                                p1: Int,
+                                p2: Int,
+                                p3: Int
+                            ) {
+                                verificationIcon.isEnabled=false
+                            }
+
+                            override fun onTextChanged(
+                                p0: CharSequence?,
+                                p1: Int,
+                                p2: Int,
+                                p3: Int
+                            ) {
+                               if (phoneNumberEditText.text.toString().length==10){
+                                   verificationIcon.visibility=View.VISIBLE
+                                   verificationIcon.setImageResource(R.drawable.tick2)
+
+                               }
+                                else{
+                                   verificationIcon.visibility=View.VISIBLE
+                                   verificationIcon.setImageResource(R.drawable.cros)
+
+                               }
+                            }
+
+                            override fun afterTextChanged(p0: Editable?) {}
+
+                        })
                         continueButton.setOnClickListener(View.OnClickListener {
                             if (InternetConnectivity.isConnected(requireContext()) && InternetConnectivity.isConnectedFast(requireContext())) {
                                 val storePhoneNo = phoneNumberEditText.text.toString().trim()

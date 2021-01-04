@@ -131,7 +131,7 @@
         android:id="@+id/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_my_calendar"
+        android:src="@drawable/dob_icon"
         app:layout_constraintBottom_toBottomOf="@+id/enter_dob_edit_text"
         app:layout_constraintEnd_toEndOf="@+id/enter_dob_edit_text"
         app:layout_constraintTop_toTopOf="@+id/enter_dob_edit_text" />

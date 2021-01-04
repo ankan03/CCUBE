@@ -64,7 +64,8 @@ class SignUp3Fragment : Fragment() {
         toastMessage.visibility = View.INVISIBLE
         val calendar=rootView.findViewById<ImageView>(R.id.calendar)
         val DOB=rootView.findViewById<EditText>(R.id.enter_dob_edit_text)
-
+        DOB.isFocusable=false
+        DOB.isCursorVisible=false
         enterNameString = rootView.enter_name_edit_text.text.toString().trim()
         enterEmailString = rootView.enter_email_edit_text.text.toString().trim()
         enterDobString = rootView.enter_dob_edit_text.text.toString().trim()

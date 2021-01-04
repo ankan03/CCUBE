@@ -14,8 +14,8 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="137dp"
-        android:fontFamily="@font/raleway"
         android:background="#1F09CCC2"
+        android:fontFamily="@font/raleway"
         android:gravity="center"
         android:padding="5dp"
         android:text="Please enter all details"
@@ -123,5 +123,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.051" />
+
+    <ImageView
+        android:id="@+id/verification_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/cros"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_phone"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_phone"
+        app:layout_constraintTop_toTopOf="@+id/edit_text_phone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
