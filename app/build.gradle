@@ -79,6 +79,11 @@ dependencies {
     implementation 'com.onesignal:OneSignal:[3.15.0, 3.99.99]'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
+    //recyclerview dependencies
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc03"
+
 
     //ExoPlayer
     implementation 'com.google.android.exoplayer:exoplayer-core:2.11.7'

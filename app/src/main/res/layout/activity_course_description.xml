@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient"
+    android:layout_height="match_parent"
+    tools:context=".ui.onboarding.activity.CourseActivity"
+    >
+
+<!--    <Button-->
+<!--        android:id="@+id/back_arrow_button"-->
+<!--        android:layout_width="81dp"-->
+<!--        android:layout_height="104dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:background="@drawable/arrow_back"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/course_recycler"-->
+
+<!--        app:layout_constraintTop_toBottomOf="@+id/course_recycler" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/course_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="4dp"
+        tools:listitem="@layout/course_item_description"
+ />
+</androidx.constraintlayout.widget.ConstraintLayout>
