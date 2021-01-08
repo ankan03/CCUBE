@@ -15,4 +15,10 @@
         <item name="android:colorAccent">@color/gradient_blue</item>
     </style>
 
+    <style name="MyRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">33.73dp</item>
+        <item name="android:maxHeight">5.75dp</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlActivated">#F5A331</item>
+    </style>
 </resources>

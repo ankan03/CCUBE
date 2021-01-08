@@ -1,62 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/gradient">
-
-
-        <Button
-            android:id="@+id/more_vert"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="316dp"
-            android:background="@drawable/more_vert"
-            app:layout_constraintStart_toEndOf="@id/back_arrow_button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="27dp" />
-
-        <Button
-            android:id="@+id/back_arrow_button"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
-            android:background="@drawable/arrow_back"
-            android:layout_marginStart="35dp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="27dp" />
-
-        <TextView
-            android:id="@+id/text_view_desc"
-            android:layout_width="375dp"
-            android:layout_height="133dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="JavaScript Algorithms and Data Structures Masterclass"
-            android:textColor="#2F2F2F"
-            android:textSize="30dp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="15dp"
-            tools:layout_editor_absoluteY="69dp" />
-
-        <TextView
-            android:layout_width="368dp"
-            android:layout_height="67dp"
-            android:text="Ultimate coding interview bootcamp. Get more job offers, negotiate a raise: Everything you need to get the job you want!"
-            android:textColor="#414141"
-android:textSize="16.5dp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="210dp"
-            tools:ignore="MissingConstraints" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
+<!--        <Button-->
+<!--            android:id="@+id/more_vert"-->
+<!--            android:layout_width="31dp"-->
+<!--            android:layout_height="31dp"-->
+<!--            android:layout_marginStart="316dp"-->
+<!--            android:background="@drawable/more_vert"-->
+<!--            app:layout_constraintStart_toEndOf="@id/back_arrow_button"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteY="27dp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/back_arrow_button"-->
+<!--            android:layout_width="31dp"-->
+<!--            android:layout_height="31dp"-->
+<!--            android:background="@drawable/arrow_back"-->
+<!--            android:layout_marginLeft="7dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="16dp"-->
+<!--            tools:layout_editor_absoluteY="27dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_view_desc"-->
+<!--            android:layout_width="375dp"-->
+<!--            android:layout_height="133dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="JavaScript Algorithms and Data Structures Masterclass"-->
+<!--            android:textColor="#2F2F2F"-->
+<!--            android:textSize="30dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="15dp"-->
+<!--            tools:layout_editor_absoluteY="69dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="368dp"-->
+<!--            android:layout_height="67dp"-->
+<!--            android:text="Ultimate coding interview bootcamp. Get more job offers, negotiate a raise: Everything you need to get the job you want!"-->
+<!--            android:textColor="#414141"-->
+<!--            android:textSize="16.5dp"-->
+<!--            tools:layout_editor_absoluteX="16dp"-->
+<!--            tools:layout_editor_absoluteY="210dp"-->
+<!--            tools:ignore="MissingConstraints" />-->
+
+<!--        <RatingBar-->
+<!--            android:id="@+id/rating_bar"-->
+<!--            style="?android:attr/ratingBarStyleSmall"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:isIndicator="true"-->
+<!--            android:numStars="5"-->
+<!--            android:rating="4.6"-->
+<!--            android:scaleX=".6"-->
+<!--            android:scaleY=".6"-->
+<!--            android:stepSize="0.1"-->
+<!--            android:theme="@style/MyRatingBar"-->
+<!--            android:transformPivotX="0dp"-->
+<!--            android:transformPivotY="0dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="123dp"-->
+<!--            tools:layout_editor_absoluteY="277dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_rating_bar"-->
+<!--            android:layout_width="20dp"-->
+<!--            android:layout_height="19dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:text="4.6"-->
+<!--            android:textColor="#F5A331"-->
+<!--            android:textSize="13dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="103dp"-->
+<!--            tools:layout_editor_absoluteY="274dp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button_bestseller"-->
+<!--            android:layout_width="73dp"-->
+<!--            android:layout_height="19dp"-->
+<!--            android:layout_toLeftOf="@id/text_rating_bar"-->
+<!--            android:background="@drawable/curved_button"-->
+<!--            android:backgroundTint="#F5A331"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="Bestseller"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="11dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="16dp"-->
+<!--            tools:layout_editor_absoluteY="274dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/enrolled_text_view"-->
+<!--            android:layout_width="169dp"-->
+<!--            android:layout_height="18dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:text="(113 ratings) 379 students"-->
+<!--            android:textColor="#414141"-->
+<!--            android:textSize="13dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="203dp"-->
+<!--            tools:layout_editor_absoluteY="275dp" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/image_course"-->
+<!--            android:layout_width="386dp"-->
+<!--            android:layout_height="218dp"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:src="#000000"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="12dp"-->
+<!--            tools:layout_editor_absoluteY="16dp" />-->
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="181dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_goneMarginTop="5dp"
+            app:layout_goneMarginBottom="5dp"
+            android:layout_marginBottom="5dp">
+            <!--    android:layout_marginLeft="17dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"-->
+            <ImageView
+                android:id="@+id/image_banner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="#000000"
+                android:scaleType="fitXY"/>
+        </androidx.cardview.widget.CardView>
+        <!--        <Button-->
+<!--            android:id="@+id/button_add_cart"-->
+<!--            android:layout_width="386dp"-->
+<!--            android:layout_height="49dp"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:background="@drawable/curved_button"-->
+<!--            android:backgroundTint="#03FFFFFF"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="Add to Cart"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="19dp"-->
+<!--            tools:layout_editor_absoluteX="12dp"-->
+<!--            tools:layout_editor_absoluteY="567dp"-->
+<!--            tools:ignore="MissingConstraints" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button_buy_now"-->
+<!--            android:layout_width="386dp"-->
+<!--            android:layout_height="49dp"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:background="@drawable/curved_button"-->
+<!--            android:backgroundTint="#043463"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="Buy Now"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="19dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="15dp"-->
+<!--            tools:layout_editor_absoluteY="628dp" />-->
 
 
 
-</androidx.cardview.widget.CardView>
