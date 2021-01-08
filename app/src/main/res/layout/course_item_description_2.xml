@@ -36,6 +36,68 @@
         android:textSize="15dp"
         android:text="Course Highlight"
         android:textColor="@color/black"/>
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <ImageView
+        android:id="@+id/world"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="48dp"
+        app:srcCompat="@drawable/world1" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="78dp"
+        app:srcCompat="@drawable/clock" />
+    <ImageView
+        android:id="@+id/files"
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="104dp"
+        app:srcCompat="@drawable/files" />
+    <ImageView
+        android:id="@+id/loop"
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="128dp"
+        app:srcCompat="@drawable/loop" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Available in hindi"
+        android:layout_marginTop="53dp"
+        android:layout_marginLeft="48dp"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11 hours exclusive contents"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="48dp"/>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="includes study materials"
+        android:layout_marginTop="103dp"
+        android:layout_marginLeft="48dp"/>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="includes study materials"
+        android:layout_marginTop="128dp"
+        android:layout_marginLeft="48dp"/>
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
 </androidx.cardview.widget.CardView>
