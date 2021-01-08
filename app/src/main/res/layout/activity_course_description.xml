@@ -208,10 +208,8 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="Add to Cart"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="19dp"
-                    tools:layout_editor_absoluteX="12dp"
-                    tools:layout_editor_absoluteY="567dp"
                     tools:ignore="MissingConstraints" />
 
                 <Button
@@ -290,7 +288,115 @@
             tools:layout_editor_absoluteY="628dp" />
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="185dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_view_recently_searched1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:reverseLayout="false"
+                tools:listitem="@layout/course_item_description_3"
+                android:layout_marginLeft="2dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/course_detail_1"
+            android:layout_width="386dp"
+            android:layout_height="49dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curved_button"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Arrays"
+            android:padding="12dp"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#414141"
+            android:textSize="19dp"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/course_detail_2"
+            android:layout_width="386dp"
+            android:layout_height="49dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curved_button"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Linked List"
+            android:padding="12dp"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#414141"
+            android:textSize="19dp"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/course_detail_3"
+            android:layout_width="386dp"
+            android:layout_height="49dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curved_button"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Stack"
+            android:padding="12dp"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#414141"
+            android:textSize="19dp"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/course_detail_4"
+            android:layout_width="386dp"
+            android:layout_height="49dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curved_button"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Queue"
+            android:padding="12dp"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#414141"
+            android:textSize="19dp"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/course_detail_5"
+            android:layout_width="386dp"
+            android:layout_height="49dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curved_button"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Graphs"
+            android:padding="12dp"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#414141"
+            android:textSize="19dp"
+            tools:ignore="MissingConstraints" />
         <!--        <TextView-->
 <!--            android:id="@+id/text_categories_courses"-->
 <!--            android:layout_width="match_parent"-->

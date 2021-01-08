@@ -35,7 +35,7 @@
 
         android:textSize="15dp"
         android:text="Course Highlight"
-        android:textColor="@color/black"/>
+        android:textColor="#414141"/>
 
     <ImageView
         android:id="@+id/world"
