@@ -1,30 +1,298 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient"
     android:layout_height="match_parent"
-    tools:context=".ui.onboarding.activity.CourseActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     >
 
-<!--    <Button-->
-<!--        android:id="@+id/back_arrow_button"-->
-<!--        android:layout_width="81dp"-->
-<!--        android:layout_height="104dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        android:background="@drawable/arrow_back"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/course_recycler"-->
-
-<!--        app:layout_constraintTop_toBottomOf="@+id/course_recycler" />-->
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/course_recycler"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:padding="4dp"
-        tools:listitem="@layout/course_item_description"
- />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical"
+        android:background="@drawable/gradient">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:id="@+id/image_back"
+                    android:layout_width="44dp"
+                    android:layout_height="32.5dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="-9dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/arrow_back" />
+
+                <ImageView
+                    android:id="@+id/img_my_account"
+                    android:layout_width="33dp"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/more_vert"
+                    android:layout_marginRight="10dp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/text_view_desc"
+            android:layout_width="377dp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="133dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="JavaScript Algorithms and Data Structures Masterclass"
+            android:textColor="#2F2F2F"
+            android:textSize="30dp"
+            tools:ignore="MissingConstraints" />
+        <TextView
+                    android:layout_width="368dp"
+                    android:layout_height="67dp"
+            android:layout_marginTop="5dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Ultimate coding interview bootcamp. Get more job offers, negotiate a raise: Everything you need to get the job you want!"
+                    android:textColor="#414141"
+                    android:textSize="16.5dp"
+                    tools:ignore="MissingConstraints" />
+        <RelativeLayout
+            android:id="@+id/top_bar1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="129dp"
+                android:isIndicator="true"
+                android:layout_marginTop="3dp"
+                android:numStars="5"
+                android:rating="4.6"
+                android:scaleX=".6"
+                android:scaleY=".6"
+                android:stepSize="0.1"
+                android:theme="@style/MyRatingBar"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="123dp"
+                tools:layout_editor_absoluteY="277dp" />
+
+            <TextView
+                android:id="@+id/enrolled_text_view"
+                android:layout_width="169dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="200dp"
+                android:fontFamily="@font/poppins_medium"
+                android:orientation="horizontal"
+                android:text="(113 ratings) 379 students"
+                android:textColor="#414141"
+                android:textSize="13dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="203dp"
+                tools:layout_editor_absoluteY="275dp" />
+
+            <TextView
+                    android:id="@+id/text_rating_bar"
+                    android:layout_width="20dp"
+                    android:layout_height="19dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:orientation="horizontal"
+                    android:text="4.6"
+                android:layout_marginLeft="99dp"
+                    android:textColor="#F5A331"
+                    android:textSize="13dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="103dp"
+                    tools:layout_editor_absoluteY="274dp" />
+
+                <Button
+                    android:id="@+id/button_bestseller"
+                    android:layout_width="73dp"
+                    android:layout_height="19dp"
+                    android:background="@drawable/curved_button"
+                    android:backgroundTint="#F5A331"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Bestseller"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="11dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="274dp" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="181dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#000000" />
+
+            
+                </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="200dp"
+            android:orientation="horizontal"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="12dp"
+            >
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rec_view_banner"-->
+<!--                android:layout_width="386dp"-->
+<!--                android:layout_height="218dp"-->
+<!--                android:layout_marginLeft="2dp"-->
+<!--                android:divider="@null"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                app:reverseLayout="false"-->
+<!--                tools:listitem="@layout/course_itm_description"-->
+<!--                />-->
+
+        </LinearLayout>
+
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_recently_searched_courses"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:layout_marginLeft="17dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="Recently Searched"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="21dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginBottom="10dp">-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rec_view_recently_searched"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:divider="@null"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:reverseLayout="false"-->
+<!--                tools:listitem="@layout/course_item"-->
+<!--                android:layout_marginLeft="2dp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>-->
+
+<!--        </LinearLayout>-->
+<!--        <TextView-->
+<!--            android:id="@+id/text_categories_courses"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:text="Categories"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="21dp"-->
+<!--            android:layout_marginLeft="17dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            />-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginBottom="10dp">-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rec_view_category"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:divider="@null"-->
+<!--                android:orientation="horizontal"-->
+<!--                tools:listitem="@layout/course_categories_item"-->
+
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>-->
+
+<!--        </LinearLayout>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/image_view_search"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/ic_search"-->
+<!--            android:background="@drawable/curved_button_search"-->
+<!--            app:tint="@color/white"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_marginLeft="17dp"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_browse_more_courses"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:text="Browse more courses"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="21dp"-->
+<!--            android:layout_marginLeft="17dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            />-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginBottom="10dp">-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rec_view_browse_more_courses"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:divider="@null"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:reverseLayout="false"-->
+<!--                tools:listitem="@layout/course_item"-->
+<!--                android:layout_marginLeft="2dp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>-->
+
+<!--        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
