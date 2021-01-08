@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
 
 
 <!--        <Button-->
@@ -122,7 +113,28 @@
 <!--            tools:ignore="MissingConstraints"-->
 <!--            tools:layout_editor_absoluteX="12dp"-->
 <!--            tools:layout_editor_absoluteY="16dp" />-->
-
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="181dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_goneMarginTop="5dp"
+            app:layout_goneMarginBottom="5dp"
+            android:layout_marginBottom="5dp">
+            <!--    android:layout_marginLeft="17dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"-->
+            <ImageView
+                android:id="@+id/image_banner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="#000000"
+                android:scaleType="fitXY"/>
+        </androidx.cardview.widget.CardView>
         <!--        <Button-->
 <!--            android:id="@+id/button_add_cart"-->
 <!--            android:layout_width="386dp"-->
@@ -154,11 +166,6 @@
 <!--            tools:ignore="MissingConstraints"-->
 <!--            tools:layout_editor_absoluteX="15dp"-->
 <!--            tools:layout_editor_absoluteY="628dp" />-->
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-
-
-
-</androidx.cardview.widget.CardView>

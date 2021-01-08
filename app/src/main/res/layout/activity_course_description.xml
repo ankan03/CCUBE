@@ -139,49 +139,84 @@
                     tools:layout_editor_absoluteY="274dp" />
         </RelativeLayout>
 
-        <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="181dp"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="10dp"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="10dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="#000000" />
+<!--        <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="181dp"-->
+<!--                    app:cardCornerRadius="5dp"-->
+<!--                    app:cardElevation="10dp"-->
+<!--                    android:layout_marginLeft="17dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:layout_marginBottom="10dp">-->
+<!--&lt;!&ndash;                        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:src="#000000" />&ndash;&gt;-->
 
-            
-                </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+<!--                </androidx.cardview.widget.CardView>-->
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_view_banner"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:layout_marginTop="200dp"
-            android:orientation="horizontal"
-            android:layout_marginRight="3dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="12dp"
-            >
+            android:divider="@null"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="false"
+            tools:listitem="@layout/course_item_description" />
 
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/rec_view_banner"-->
-<!--                android:layout_width="386dp"-->
-<!--                android:layout_height="218dp"-->
-<!--                android:layout_marginLeft="2dp"-->
-<!--                android:divider="@null"-->
-<!--                android:orientation="horizontal"-->
-<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--                app:reverseLayout="false"-->
-<!--                tools:listitem="@layout/course_itm_description"-->
-<!--                />-->
+        <TextView
+            android:layout_width="144dp"
+            android:layout_height="37dp"
+            android:text="₹500 ₹650"
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="27dp" />
+                <Button
+                    android:id="@+id/button_add_cart"
+                    android:layout_width="386dp"
+                    android:layout_height="49dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/curved_button"
+                    android:backgroundTint="#03FFFFFF"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Add to Cart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="19dp"
+                    tools:layout_editor_absoluteX="12dp"
+                    tools:layout_editor_absoluteY="567dp"
+                    tools:ignore="MissingConstraints" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/button_buy_now"
+                    android:layout_width="386dp"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="12dp"
+                    android:background="@drawable/curved_button"
+                    android:backgroundTint="#043463"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Buy Now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="19dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="15dp"
+                    tools:layout_editor_absoluteY="628dp" />
 
 
 
-<!--        <TextView-->
+        <!--        <TextView-->
 <!--            android:id="@+id/text_recently_searched_courses"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="29dp"-->
